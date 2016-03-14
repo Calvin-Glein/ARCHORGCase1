@@ -7,7 +7,6 @@ import javax.swing.JTextField;
 import java.awt.Insets;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JButton;
-import java.awt.Font;
 
 public class GUI {
 
@@ -29,7 +28,6 @@ public class GUI {
 		jPanel.setLayout(gbl_jPanel);
 		
 		JLabel lblTitle = new JLabel(" IEEE-754 binary-64 floating point translator ");
-		lblTitle.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		GridBagConstraints gbc_lblTitle = new GridBagConstraints();
 		gbc_lblTitle.anchor = GridBagConstraints.NORTHWEST;
 		gbc_lblTitle.insets = new Insets(0, 0, 5, 0);
@@ -96,7 +94,6 @@ public class GUI {
 		frame.setSize(800, 500);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
-		frame.setResizable(false);
 
 	}
 

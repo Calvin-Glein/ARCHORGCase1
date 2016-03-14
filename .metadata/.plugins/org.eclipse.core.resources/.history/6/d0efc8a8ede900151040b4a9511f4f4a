@@ -1,0 +1,69 @@
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.GridBagLayout;
+import javax.swing.JLabel;
+import java.awt.GridBagConstraints;
+import javax.swing.JTextField;
+import java.awt.Insets;
+
+public class GUI {
+
+	private JPanel jPanel = new JPanel();
+	private JFrame frame = new JFrame("ARCHORG");
+	private JTextField textField;
+
+	public GUI() {
+
+		
+		frame.getContentPane().add(jPanel);
+		GridBagLayout gbl_jPanel = new GridBagLayout();
+		gbl_jPanel.columnWidths = new int[]{60, 724, 0};
+		gbl_jPanel.rowHeights = new int[]{30, 14, 37, 14, 20, 14, 0};
+		gbl_jPanel.columnWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
+		gbl_jPanel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		jPanel.setLayout(gbl_jPanel);
+		
+		JLabel lblTitle = new JLabel(" IEEE-754 binary-64 floating point translator ");
+		GridBagConstraints gbc_lblTitle = new GridBagConstraints();
+		gbc_lblTitle.anchor = GridBagConstraints.NORTH;
+		gbc_lblTitle.insets = new Insets(0, 0, 5, 0);
+		gbc_lblTitle.gridx = 1;
+		gbc_lblTitle.gridy = 1;
+		jPanel.add(lblTitle, gbc_lblTitle);
+		
+		JLabel lblInputDigit = new JLabel("Input 16-digit hexadecimal value");
+		GridBagConstraints gbc_lblInputDigit = new GridBagConstraints();
+		gbc_lblInputDigit.anchor = GridBagConstraints.NORTH;
+		gbc_lblInputDigit.insets = new Insets(0, 0, 3, 0);
+		gbc_lblInputDigit.gridx = 1;
+		gbc_lblInputDigit.gridy = 3;
+		jPanel.add(lblInputDigit, gbc_lblInputDigit);
+		
+		textField = new JTextField();
+		GridBagConstraints gbc_textField = new GridBagConstraints();
+		gbc_textField.anchor = GridBagConstraints.NORTH;
+		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField.insets = new Insets(0, 0, 3, 0);
+		gbc_textField.gridx = 1;
+		gbc_textField.gridy = 4;
+		jPanel.add(textField, gbc_textField);
+		textField.setColumns(10);
+		
+		JLabel lblInput = new JLabel("Input 64-bit partition binary ");
+		GridBagConstraints gbc_lblInput = new GridBagConstraints();
+		gbc_lblInput.anchor = GridBagConstraints.NORTH;
+		gbc_lblInput.gridx = 1;
+		gbc_lblInput.gridy = 5;
+		jPanel.add(lblInput, gbc_lblInput);
+//		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		frame.setSize(800, 500);
+		frame.setLocationRelativeTo(null);
+		frame.setVisible(true);
+
+	}
+
+	public static void main(String[] args) {
+		GUI gui = new GUI();
+
+	}
+}

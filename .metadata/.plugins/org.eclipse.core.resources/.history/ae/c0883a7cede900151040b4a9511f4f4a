@@ -1,0 +1,39 @@
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.GridBagLayout;
+import javax.swing.JLabel;
+import java.awt.GridBagConstraints;
+
+public class GUI {
+
+	private JPanel jPanel = new JPanel();
+	private JFrame frame = new JFrame("ARCHORG");
+
+	public GUI() {
+
+		
+		frame.getContentPane().add(jPanel);
+		GridBagLayout gbl_jPanel = new GridBagLayout();
+		gbl_jPanel.columnWidths = new int[]{0, 0, 0, 0};
+		gbl_jPanel.rowHeights = new int[]{0, 0, 0};
+		gbl_jPanel.columnWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_jPanel.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
+		jPanel.setLayout(gbl_jPanel);
+		
+		JLabel lblTitle = new JLabel(" IEEE-754 binary-64 floating point translator ");
+		GridBagConstraints gbc_lblTitle = new GridBagConstraints();
+		gbc_lblTitle.gridx = 2;
+		gbc_lblTitle.gridy = 1;
+		jPanel.add(lblTitle, gbc_lblTitle);
+//		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		frame.setSize(800, 500);
+		frame.setLocationRelativeTo(null);
+		frame.setVisible(true);
+
+	}
+
+	public static void main(String[] args) {
+		GUI gui = new GUI();
+
+	}
+}

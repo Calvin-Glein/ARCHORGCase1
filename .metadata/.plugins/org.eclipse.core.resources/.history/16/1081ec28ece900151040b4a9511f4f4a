@@ -1,0 +1,22 @@
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class GUI {
+
+	private JPanel jPanel = new JPanel();
+	private JFrame frame = new JFrame("ARCHORG");
+
+	public GUI() {
+
+		jPanel.setSize(600, 450);
+
+		frame.add(splitPane, BorderLayout.CENTER);
+		frame.setLocationRelativeTo(null);
+
+	}
+
+	public static void main(String[] args) {
+		GUI gui = new GUI();
+
+	}
+}

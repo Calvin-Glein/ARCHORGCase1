@@ -1,0 +1,24 @@
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class GUI {
+
+	private JPanel jPanel = new JPanel();
+	private JFrame frame = new JFrame("ARCHORG");
+
+	public GUI() {
+
+		
+		frame.getContentPane().add(jPanel);
+//		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		frame.setSize(1000, 1000);
+		frame.setLocationRelativeTo(null);
+		frame.setVisible(true);
+
+	}
+
+	public static void main(String[] args) {
+		GUI gui = new GUI();
+
+	}
+}
