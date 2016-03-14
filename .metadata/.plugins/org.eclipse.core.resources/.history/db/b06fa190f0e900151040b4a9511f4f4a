@@ -87,7 +87,6 @@ public class GUI implements ActionListener{
 		gbc_btnTranslate.insets = new Insets(0, 0, 5, 0);
 		gbc_btnTranslate.gridx = 1;
 		gbc_btnTranslate.gridy = 9;
-		btnTranslate.addActionListener(act);
 		jPanel.add(btnTranslate, gbc_btnTranslate);
 		
 		txtResult = new JTextField();
@@ -122,6 +121,7 @@ public class GUI implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-
+		if()
+		
 	}
 }
