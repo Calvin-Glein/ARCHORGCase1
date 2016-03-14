@@ -111,8 +111,7 @@ public class GUI implements ActionListener{
 	}
 	private class ActListener implements ActionListener {
 		public void actionPerformed(ActionEvent a) {
-			
-					if (a.getSource() == btnTranslate) {
+			if (a.getSource() == btnTranslate) {
 				System.out.println("Hello");
 				}
 			}
