@@ -1,0 +1,86 @@
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.GridBagLayout;
+import javax.swing.JLabel;
+import java.awt.GridBagConstraints;
+import javax.swing.JTextField;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import net.miginfocom.swing.MigLayout;
+import javax.swing.JButton;
+import java.awt.Font;
+
+public class GUI implements ActionListener{
+
+	private JPanel jPanel = new JPanel();
+	private JFrame frame = new JFrame("ARCHORG");
+	private JTextField txt16DigitHex;
+	private JTextField txt64bitBinary;
+	private JTextField txtResult;
+	private JButton btnTranslate;
+
+	public GUI() {
+
+		ActListener act = new ActListener();
+		frame.getContentPane().add(jPanel);
+		jPanel.setLayout(new MigLayout("", "[332px]", "[21px][14px][20px][14px][14px][20px][23px][20px]"));
+		
+		JLabel lblTitle = new JLabel(" IEEE-754 binary-64 floating point translator ");
+		lblTitle.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		jPanel.add(lblTitle, "cell 0 0,alignx left,aligny top");
+		
+		JLabel lblInputDigit = new JLabel("Input 16-digit hexadecimal value");
+		jPanel.add(lblInputDigit, "cell 0 1,alignx center,aligny top");
+		
+		txt16DigitHex = new JTextField();
+		jPanel.add(txt16DigitHex, "cell 0 2,alignx center,aligny top");
+		txt16DigitHex.setColumns(10);
+		
+		JLabel lblor = new JLabel("-OR-");
+		jPanel.add(lblor, "cell 0 3,alignx center,aligny center");
+		
+		JLabel lblInput = new JLabel("Input 64-bit partition binary ");
+		jPanel.add(lblInput, "cell 0 4,alignx center,aligny bottom");
+		
+		txt64bitBinary = new JTextField();
+		jPanel.add(txt64bitBinary, "cell 0 5,alignx center,aligny top");
+		txt64bitBinary.setColumns(10);
+		
+		btnTranslate = new JButton("Translate");
+		btnTranslate.addActionListener(act);
+		jPanel.add(btnTranslate, "cell 0 6,alignx center,aligny center");
+		
+		txtResult = new JTextField();
+		jPanel.add(txtResult, "cell 0 7,alignx center,aligny top");
+		txtResult.setColumns(10);
+//		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		frame.setSize(800, 500);
+		frame.setLocationRelativeTo(null);
+		frame.setVisible(true);
+		frame.setResizable(false);
+
+	}
+
+	public static void main(String[] args) {
+		GUI gui = new GUI();
+
+	}
+	private class ActListener implements ActionListener {
+		public void actionPerformed(ActionEvent a) {
+			
+					if (a.getSource() == btnTranslate) {
+				System.out.println("Hello");
+				}
+			}
+
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+}
